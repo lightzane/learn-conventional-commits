@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/lightzane/learn-conventional-commits/compare/v1.2.0...v1.3.0) (2025-09-17)
+
+### Features
+
+- add 'pnpm test' on pre-commit git hook ([d477ae1](https://github.com/lightzane/learn-conventional-commits/commit/d477ae17f98799841de36ef1b8fa588b824e4c11))
+- add instructions on post-commit script ([01ab371](https://github.com/lightzane/learn-conventional-commits/commit/01ab37187bae5a39f7659025ae0b2f19f8a38bf6))
+- add unreal test simulation ([441fe31](https://github.com/lightzane/learn-conventional-commits/commit/441fe3180836df916f73de05a1a16c711c6d3337))
+
 # [1.2.0](https://github.com/lightzane/learn-conventional-commits/compare/v1.1.0...v1.2.0) (2025-09-17)
 
 ### Features
