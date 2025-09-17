@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/lightzane/learn-conventional-commits/compare/v1.1.0...v1.2.0) (2025-09-17)
+
+### Features
+
+- add more options to bump version ([29f5845](https://github.com/lightzane/learn-conventional-commits/commit/29f58452d8ce83bff378777e53502b13f8557ed9))
+
 # [1.1.0](https://github.com/lightzane/learn-conventional-commits/compare/v1.0.0...v1.1.0) (2025-09-17)
 
 ### Features
