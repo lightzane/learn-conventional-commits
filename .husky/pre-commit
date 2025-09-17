@@ -2,5 +2,6 @@
 npx lint-staged # or (pnpm exec lint-staged)
 echo
 
-pnpm test
+# Run `pnpm test` if not in the middle of a rebase process
+node -e "const fs = require('node:fs'); const { execSync } = require('node:child_process'); const f = fs.globSync('.git/rebase-*'); if (f.length > 0); else execSync('pnpm test', { stdio: 'inherit' })"
 echo
