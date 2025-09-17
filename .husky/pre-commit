@@ -2,5 +2,5 @@
 npx lint-staged # or (pnpm exec lint-staged)
 echo
 
-# pnpm test
-# echo
+pnpm test
+echo
