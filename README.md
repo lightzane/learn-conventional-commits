@@ -21,11 +21,21 @@ npm init -y
 git init
 ```
 
-### 2. Must have the following [scripts](./scripts/).
+### 2. Must have the following [scripts](./scripts/)
+
+Feel free to copy the files. See [scripts folder](./scripts/)
+
+```text
+./scripts
+  ├── commit-msg.cjs
+  ├── post-commit.cjs
+  ├── release.cjs
+  └── verify-commit.cjs
+```
 
 **Prerequisite:**
 
-You must have the following `scripts` in your `package.json`:
+Also, you must have the following `scripts` in your `package.json`:
 
 - `build`
 - `test`
