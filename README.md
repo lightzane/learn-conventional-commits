@@ -163,30 +163,26 @@ Add these codes to your `release.cjs` before executing any build.
 ```cjs
 const stdio = 'inherit'
 
-/** @type { 'manual' | 'major' | 'minor' | 'patch' | 'prerelease' | string } */
+/** @type { 'manual' | 'major' | 'minor' | 'patch' | 'prerelease' | 'premajor' | 'preminor' | 'prepatch' | string } */
 const mode = process.argv[2] || 'manual'
 
 // Bump version
 if (mode !== 'manual') {
-  const preid = mode === 'prerelease' ? '--preid alpha' : ''
+  const preid = /^pre/.test(mode) ? '--preid alpha' : ''
   execSync(`npm version ${mode} ${preid} --no-git-tag-version`, {
     stdio,
   })
 }
 ```
 
-Add the following to your `package.json` accordingly:
+### Usage
 
-```json
-{
-  "scripts": {
-    "prerelease": "node scripts/release.cjs prerelease",
-    "release": "node scripts/release.cjs",
-    "release-major": "node scripts/release.cjs major",
-    "release-minor": "node scripts/release.cjs minor",
-    "release-patch": "node scripts/release.cjs patch"
-  }
-}
+```sh
+# pnpm release <options>
+pnpm release minor
+
+# npm
+npm run release -- minor
 ```
 
 Feel free to customize your scripts!
