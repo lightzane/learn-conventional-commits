@@ -17,7 +17,7 @@ const latestCommitMsg = execSync('git log -1 --pretty=%B').toString().trim()
 
 if (latestCommitMsg === `release: ${TAG}`) {
   // Create git tag
-  execSync(`git tag ${TAG}`)
+  execSync(`git tag ${TAG} -f`) // -f to force update if tag already exists (may happen on `git commit --amend`)
   console.log()
 
   // Show the latest 3 commits
