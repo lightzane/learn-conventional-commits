@@ -23,7 +23,20 @@ git init
 
 ### 2. Must have the following [scripts](./scripts/).
 
-Note: Ignore the errors, fix underway at [Step 7](#7-install-picocolors).
+**Prerequisite:**
+
+You must have the following `scripts` in your `package.json`:
+
+- `build`
+- `test`
+
+If you do not have these, then comment/exclude them out from the **scripts** and git hooks (husky), accordingly.
+
+> [!NOTE]:
+> No logic behind on `build` and `test` as they are arbitrary and you may have a different name for them.
+
+> [!WARNING]:
+> Ignore the errors, fix underway at [Step 7](#7-install-picocolors).
 
 ### 3. Install `husky`
 
@@ -57,11 +70,14 @@ and updates `package.json` to include the following:
 npx lint-staged # or (pnpm exec lint-staged)
 echo
 
-# pnpm test
-# echo
+# Run `pnpm test` if not in the middle of a rebase process
+node -e "const fs = require('node:fs'); const { execSync } = require('node:child_process'); const f = fs.globSync('.git/rebase-*'); if (f.length > 0); else execSync('pnpm test', { stdio: 'inherit' })"
+echo
 ```
 
 We will install and setup `lint-staged` in the next steps.
+
+The `node -e "..."` is just an example to demo that we can also do inline scripts other than creating a separate `pre-commit.cjs` file
 
 **`commit-msg`**
 
