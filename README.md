@@ -150,8 +150,46 @@ Add the following to your `package.json`
 6. `pnpm release`
 7. `git push && git push origin tag <tag>`
 
+> [!NOTE]
+> You can automate bump version and release (**Step 5-6**). See details [here](#auto-bump-version-using-npm-pnpm).
+
 > [!TIP]
 > Setup git alias commands: <https://github.com/lightzane/git-setup?tab=readme-ov-file#setup-git-global-configurations>
+
+## Auto Bump Version using `npm` (`pnpm`)
+
+Add these codes to your `release.cjs` before executing any build.
+
+```cjs
+const stdio = 'inherit'
+
+/** @type { 'manual' | 'major' | 'minor' | 'patch' | 'prerelease' | string } */
+const mode = process.argv[2] || 'manual'
+
+// Bump version
+if (mode !== 'manual') {
+  const preid = mode === 'prerelease' ? '--preid alpha' : ''
+  execSync(`npm version ${mode} ${preid} --no-git-tag-version`, {
+    stdio,
+  })
+}
+```
+
+Add the following to your `package.json` accordingly:
+
+```json
+{
+  "scripts": {
+    "prerelease": "node scripts/release.cjs prerelease",
+    "release": "node scripts/release.cjs",
+    "release-major": "node scripts/release.cjs major",
+    "release-minor": "node scripts/release.cjs minor",
+    "release-patch": "node scripts/release.cjs patch"
+  }
+}
+```
+
+Feel free to customize your scripts!
 
 ## Bonus
 
