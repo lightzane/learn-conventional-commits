@@ -1,3 +1,9 @@
+# [1.4.0](https://github.com/lightzane/learn-conventional-commits/compare/v1.3.0...v1.4.0) (2025-09-17)
+
+### Features
+
+- force update git tag ([ef6db9e](https://github.com/lightzane/learn-conventional-commits/commit/ef6db9e00695d65b5727cc78d9a5ea6c4de1212e))
+
 # [1.3.0](https://github.com/lightzane/learn-conventional-commits/compare/v1.2.0...v1.3.0) (2025-09-17)
 
 ### Features
