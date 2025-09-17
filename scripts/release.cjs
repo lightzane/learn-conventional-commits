@@ -3,12 +3,12 @@ const { execSync } = require('node:child_process')
 
 const stdio = 'inherit'
 
-/** @type { 'manual' | 'major' | 'minor' | 'patch' | 'prerelease' | string } */
+/** @type { 'manual' | 'major' | 'minor' | 'patch' | 'prerelease' | 'premajor' | 'preminor' | 'prepatch' | string } */
 const mode = process.argv[2] || 'manual'
 
 // Bump version
 if (mode !== 'manual') {
-  const preid = mode === 'prerelease' ? '--preid alpha' : ''
+  const preid = /^pre/.test(mode) ? '--preid alpha' : ''
   execSync(`npm version ${mode} ${preid} --no-git-tag-version`, {
     stdio,
   })
