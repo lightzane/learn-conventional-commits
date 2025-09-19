@@ -1,3 +1,9 @@
+## [1.4.1](https://github.com/lightzane/learn-conventional-commits/compare/v1.4.0...v1.4.1) (2025-09-19)
+
+### Bug Fixes
+
+- **instructions:** missing tag command ([7539788](https://github.com/lightzane/learn-conventional-commits/commit/753978852434c93c9298dbafeccbc08a18375a8f))
+
 # [1.4.0](https://github.com/lightzane/learn-conventional-commits/compare/v1.3.0...v1.4.0) (2025-09-17)
 
 ### Features
