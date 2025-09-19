@@ -39,7 +39,7 @@ if (latestCommitMsg === `release: ${TAG}`) {
   console.log()
   console.log('If possible, please push the tag to remote:\n')
   console.log(pico.green(`\tgit push`))
-  console.log(pico.green(`\tgit push origin ${TAG}`))
+  console.log(pico.green(`\tgit push origin tag ${TAG}`))
   console.log()
   console.log('To discard this release:\n')
   console.log(pico.gray(`\tgit tag -d ${TAG}`))
